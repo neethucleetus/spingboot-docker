@@ -1,8 +1,10 @@
 pipeline{
-    agent any
+     agent {
+    label 'docker' 
+  }
     tools{
         maven "maven3.8.1"
-        tool name: 'docker', type: 'dockerTool'
+       
       
     }
     stages{
