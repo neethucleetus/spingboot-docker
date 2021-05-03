@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools{
         maven "maven3.8.1"
-        docker "docker"
+      
     }
     stages{
         stage("Maven-build"){
@@ -15,7 +15,7 @@ pipeline{
         stage("Docker-Image-Build"){
             steps{
             script{
-                docker.build docker-demo+":$BUILD_NUMBER"
+                docker.build("docker-demo")
             }
             }
         }
