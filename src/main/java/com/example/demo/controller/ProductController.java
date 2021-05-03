@@ -24,7 +24,7 @@ public class ProductController {
 	public ResponseEntity<List<Product>> getAllProduct() {
 		return ResponseEntity.ok(Arrays.asList(
 
-			new Product(121,"Mobile")
+			new Product(121,"Mobile",30000)
 		));
 	}
 
