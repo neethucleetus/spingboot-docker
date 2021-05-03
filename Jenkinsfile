@@ -17,7 +17,8 @@ pipeline{
 
         stage("Docker-Image-Build"){
             steps{
-               sh "docker images"
+            
+               docker.build "test"
             }
         }
     }
