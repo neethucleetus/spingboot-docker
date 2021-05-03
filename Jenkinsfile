@@ -10,8 +10,11 @@ pipeline{
                 sh "mvn clean install"
             }
         }
-       
-
+        stage("Docker-Image-Build"){
+            script{
+                docker.build docker-demo+":$BUILD_NUMBER"
+            }
+        }
     }
     post{
         always{
