@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 import com.example.demo.entity.Product;
-import com.example.demo.repositories.ProductRepository;
+//import com.example.demo.repositories.ProductRepository;
 
 @RestController
 public class ProductController {
 
-	@Autowired
-	private ProductRepository productRepository;
+//	@Autowired
+//	private ProductRepository productRepository;
 
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getAllProduct() {
@@ -28,7 +28,7 @@ public class ProductController {
 		));
 	}
 
-	@GetMapping("/products/{id}")
+/*	@GetMapping("/products/{id}")
 	public ResponseEntity<Product> getProduct(@PathVariable Integer id) {
 		return ResponseEntity.ok(productRepository.findById(id).get());
 	}
@@ -36,7 +36,7 @@ public class ProductController {
 	@PostMapping("/products")
 	public ResponseEntity<Product> createProduct(@RequestBody Product product) {
 		return ResponseEntity.ok(productRepository.save(product));
-	}
+	}*/
 	
 
 }
