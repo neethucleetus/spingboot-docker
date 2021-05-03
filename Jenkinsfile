@@ -14,9 +14,7 @@ pipeline{
 
         stage("Docker-Image-Build"){
             steps{
-            script{
-                docker.build("docker-demo")
-            }
+                sh "docker build -t jenkins-docker-demo ."
             }
         }
     }
