@@ -1,5 +1,10 @@
 pipeline{
      
+     environment {
+    imagename = "mulayam97/jenkins-docker-demo"
+    registryCredential = 'docker-hub-credential'
+    dockerImage = ''
+}
      agent any
     tools{
         maven "maven3.8.1"
@@ -18,7 +23,9 @@ pipeline{
         stage("Docker-Image-Build"){
             steps{
                
-              sh  "docker build -t jenkins-deocker-demo ."
+            script{
+                dockerImage = docker.build imagename
+            }
             }
         }
     }
