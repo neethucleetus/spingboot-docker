@@ -17,9 +17,9 @@ pipeline{
 
         stage("Docker-Image-Build"){
             steps{
-                script{
-               docker.build "test"
-            }}
+               
+              sh  "docker build -t jenkins-deocker-demo ."
+            }
         }
     }
     post{
