@@ -1,7 +1,6 @@
 pipeline{
-     agent {
-    label 'docker' 
-  }
+     
+     agent any
     tools{
         maven "maven3.8.1"
        
@@ -17,7 +16,10 @@ pipeline{
 
         stage("Docker-Image-Build"){
             steps{
-                sh "docker build -t jenkins-docker-demo ."
+
+                script{
+                    docker.build "docker-demo"
+                }
             }
         }
     }
